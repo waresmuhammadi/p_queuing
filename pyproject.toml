@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "p_queuing"
+version = "0.1.0"
+description = "p_queuing Flask service & worker"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name="Wares", email="dr.wares007@gmail.com" }]
+dependencies = [
+  "flask",
+  "pika",
+]
+
+[project.scripts]
+p_queuing-service = "p_queuing.app:main"
+p_queuing-worker  = "p_queuing.worker:main"
